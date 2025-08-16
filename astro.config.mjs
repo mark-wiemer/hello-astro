@@ -1,8 +1,7 @@
 import { defineConfig } from "astro/config";
 import { visit } from "unist-util-visit";
-import mdx from "@astrojs/mdx";
 
-// Relative links work locally but not in production
+// Relative links work with `dev` but not with `build`
 const rewriteLinks = (base) => {
   return (tree) => {
     visit(tree, "link", (node) => {
@@ -19,7 +18,6 @@ const base = "/next";
 // https://astro.build/config
 export default defineConfig({
   base,
-  integrations: [mdx()],
   markdown: {
     remarkPlugins: [rewriteLinks(base)],
   },
