@@ -4,4 +4,4 @@ https://github.com/withastro/astro/issues/14211
 
 Bash `fnm use && npm i && npm run dev`, then open the page. It should load "Hello world" without refreshing.
 
-Currently, it loads an MDXError, but on refresh, it works.
+Currently, it loads a TypeError, but on refresh, it works.
